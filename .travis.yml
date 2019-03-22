@@ -4,10 +4,10 @@ node_js:
 notifications:
   -luckas.pires1@gmail.com
 before_install:
-  - npm install -g bower@1.8.4
-  - npm install -g grunt-cli@0.4.4
-  - npm install -g karma-cli@4.0.0
-  - npm install -g protractor@5.4.2
+  - npm install -g bower
+  - npm install -g grunt-cli
+  - npm install -g karma-cli
+  - npm install -g protractor
   - webdriver-manager update
   - bower install
 before_script:
