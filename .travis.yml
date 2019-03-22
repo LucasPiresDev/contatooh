@@ -11,6 +11,5 @@ before_install:
   - bower install
 before_script:
   - grunt
-  - cd dist
 script:
   - karma start config/karma.config.js --single-run --browsers PhantomJS
