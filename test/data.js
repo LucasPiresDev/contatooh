@@ -6,14 +6,14 @@ var contatos = [
     {nome:"xyz3",email:'xyz3@email.com.br'},
 ];
 
-MongoClient.connect('mongodb://127.0.0.1:27017/contatooh_test',{ useNewUrlParser: true },
+MongoClient.connect('mongodb://127.0.0.1:27017',{ useNewUrlParser: true },
     function(erro, db){
         if(erro) throw err;
 
-        db.dropDatabase(function(err){
+        db.db('contatooh_test').dropDatabase(function(err){
             if(err)  return console.log(err);
             console.log('Banco apagado com sucesso')
-            db.collection('contatos').insert(contatos,
+            db.db('contatooh_test').collection('contatos').insert(contatos,
                 function(err, inserted){
                     if(err) return console.log(err);
                     console.log('Banco populado com sucesso')
