@@ -6,7 +6,7 @@ var contatos = [
     {nome:"xyz3",email:'xyz3@email.com.br'},
 ];
 
-MongoClient.connect('mongodb://127.0.0.1:27017/contatooh_test',
+MongoClient.connect('mongodb://127.0.0.1:27017/contatooh_test',{ useNewUrlParser: true },
     function(erro, db){
         if(erro) throw err;
 
