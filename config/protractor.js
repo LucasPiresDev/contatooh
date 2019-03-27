@@ -1,7 +1,9 @@
 var config = require('./config')();
 exports.config = {
-    sauceUser: config.sauceUser,
-    sauceKey: config.sauceKey,
+    //sauceUser: config.sauceUser,
+    sauceUser: 'lkpdev',
+    //sauceKey: config.sauceKey,
+    sauceKey: '0f9b8323-bb82-4d93-b3dc-3991cf46a7b3',
     capabilities : {
         'name' : config.sauceTestName,
         'browserName' : 'chrome',
