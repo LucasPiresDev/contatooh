@@ -6,7 +6,6 @@ exports.config = {
         'name' : config.sauceTestName,
         'browserName' : 'chrome',
         'tunel-identifier' : config.travisJobNumber,
-        'startConnect': false,
         'build' : config.travisBuild
     },
     
