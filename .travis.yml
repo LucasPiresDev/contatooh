@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 10.14.2
 notifications:
-  -luckas.pires1@gmail.com
+  email: luckas.pires1@gmail.com
 services:
   - mongodb
 env:

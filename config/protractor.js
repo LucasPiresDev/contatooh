@@ -2,7 +2,6 @@ var config = require('./config')();
 exports.config = {
     sauceUser: config.sauceUser,
     sauceKey: config.sauceKey,
-    startConnect: false,
     capabilities : {
         'name' : config.sauceTestName,
         'browserName' : 'chrome',
