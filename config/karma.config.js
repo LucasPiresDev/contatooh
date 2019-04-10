@@ -22,7 +22,9 @@ module.exports = function(config) {
         '../public/js/main.js',
         '../public/js/controller/**/*.js',
         '../public/js/services/**/*.js',
-        '../test/spec/**/*Spec.js'
+        '../public/js/directives/**/*.js',
+        '../test/spec/**/*Spec.js',
+        '../public/js/directives/meus-componentes/*.html'
     ],
 
 
@@ -33,8 +35,21 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+  preprocessors : {
+      'public/js/directives/**/*.html': 'ng-html2js'
+  },
+
+  plugins : [
+      'karma-chrome-launcher',
+      'karma-ng-html2js-preprocessor',
+      'karma-phantomjs-launcher',
+      'karma-jasmine'
+  ],
+
+  ngHtml2JsPreprocessor: {
+      moduleName: 'templates',
+      stripPrefix: '.*public/'
+  },
 
 
     // test results reporter to use
@@ -63,7 +78,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['CHROMIUM_BIN', 'Chrome_without_security'],
+    browsers: ['Chrome'],
 
     customLaunchers: {
       Chrome_without_security: {
@@ -72,6 +87,7 @@ module.exports = function(config) {
       }
     },
 
+    
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true

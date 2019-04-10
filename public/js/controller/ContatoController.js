@@ -14,18 +14,17 @@ angular.module('contatooh').controller('ContatoController',function($scope,$rout
         $scope.contato = new Contato();
     }
     
-    $scope.salva = function(){
-        $scope.contato.$save()
-            .then(function(){
-                $scope.mensagem = {texto:"salvo com sucesso"};
-                $scope.contato = new Contato();
-            })
-            .catch(function(erro){
-                $scope.mensagem = {texto:"Não foi possivel salvar"};
-            });
-    };
+    $scope.salva = function() {
+		
+		$scope.contato.$save()
+		.then(function() {
+			$scope.mensagem = {texto: 'Salvo com sucesso'};
+			$scope.contato = new Contato();
+			$scope.$broadcast('contatoSalvo');
+		})
+		.catch(function(erro) {
+  			$scope.mensagem = {texto: 'Não foi possível salvar'};
+  		});
+	};
 
-    Contato.query(function(contatos){
-        $scope.contatos = contatos
-    })
 });
